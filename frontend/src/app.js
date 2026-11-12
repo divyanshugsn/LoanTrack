@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/loans";
+const API_URL = "/loans";
 
 const loanForm = document.getElementById("loanForm");
 const loanTableBody = document.getElementById("loanTableBody");
