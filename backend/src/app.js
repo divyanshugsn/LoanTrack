@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Loan routes
-app.use("/api/loans", loanRoutes);
+app.use("/loans", loanRoutes);
 
 // Liveness check: does not depend on PostgreSQL
 app.get("/healthz", (req, res) => {
