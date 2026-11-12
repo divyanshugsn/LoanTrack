@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanTrack | Loan Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>LoanTrack</h1>
+            <p>Simple Loan Management Dashboard</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard">
+            <div>
+                <h2>Loan Management</h2>
+                <p>View and manage loan applications.</p>
+            </div>
+            <div class="stats">
+                <span>Total Loans</span>
+                <strong id="totalLoans">0</strong>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Add New Loan</h2>
+
+            <form id="loanForm">
+                <div class="form-group">
+                    <label for="borrowerName">Borrower Name</label>
+                    <input
+                        type="text"
+                        id="borrowerName"
+                        placeholder="Enter borrower name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="loanAmount">Loan Amount</label>
+                    <input
+                        type="number"
+                        id="loanAmount"
+                        placeholder="Enter loan amount"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="propertyCity">Property City</label>
+                    <input
+                        type="text"
+                        id="propertyCity"
+                        placeholder="Enter property city"
+                    >
+                </div>
+
+                <button type="submit" id="submitButton">
+                    Add Loan
+                </button>
+            </form>
+
+            <p id="formMessage" role="status"></p>
+        </section>
+
+        <section class="card">
+            <div class="section-heading">
+                <h2>All Loans</h2>
+                <button id="refreshButton" class="secondary-button">
+                    Refresh
+                </button>
+            </div>
+
+            <p id="loadingMessage">Loading loans...</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Borrower</th>
+                            <th>Loan Amount</th>
+                            <th>City</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="loanTableBody"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage" hidden>No loans found.</p>
+            <p id="errorMessage" class="error" role="alert"></p>
+        </section>
+    </main>
+</body>
+</html>
