@@ -16,7 +16,8 @@ docker images
 ```
 
 **Evidence:**
-<!-- Paste actual output here -->
+loantrack-backend:v1                                                                  d4baa7075e0d        249MB         62.7MB    U   
+loantrack-frontend:v1                                                                 d7c987c690a7       81.5MB           23MB    U  
 
 ### B2. Container Status
 
