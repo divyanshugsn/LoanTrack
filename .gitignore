@@ -28,7 +28,7 @@ logs/
 # Kubernetes actual secrets
 k8s/secret.yaml
 k8s/secrets.yaml
-
+k8s/postgres-secret.yaml
 # Temporary files
 *.tmp
 *.swp
