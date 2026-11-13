@@ -27,7 +27,10 @@ docker compose ps
 ```
 
 **Evidence:**
-<!-- Paste actual output here -->
+NAME                 IMAGE                   COMMAND                  SERVICE    CREATED        STATUS                  PORTS
+loantrack-backend    loantrack-backend:v1    "docker-entrypoint.s…"   backend    16 hours ago   Up 16 hours (healthy)   5000/tcp      
+loantrack-frontend   loantrack-frontend:v1   "/docker-entrypoint.…"   frontend   16 hours ago   Up 16 hours             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+loantrack-postgres   postgres:17-alpine      "docker-entrypoint.s…"   postgres   16 hours ago   Up 16 hours (healthy)   5432/tcp     
 
 ### B3. Non-root Container Verification
 
@@ -42,14 +45,13 @@ docker exec loantrack-frontend whoami
 ```
 
 **Evidence:**
-<!-- Paste actual output here -->
-
+C:\Users\LENOVO\OneDrive\Documents\Projects\LoanTrack> docker exec loantrack-backend whoami
+appuser
 ### B4. Application Access
 
 **Frontend:** http://localhost:8080
-
-<!-- Add screenshot showing the running application -->
-
+    
+    image.png
 ---
 
 ## C. Database and Connectivity
@@ -93,7 +95,9 @@ curl.exe -i http://localhost:8080/readyz
 ```
 
 **Evidence:**
-<!-- Paste actual output here -->
+{"status":"alive","message":"LoanTrack backend is running"}
+
+{"status":"ready","database":"connected"}
 
 ### C5. Frontend-to-Database Verification
 
