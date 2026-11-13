@@ -1,0 +1,10 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: loantrack
+
+data:
+  POSTGRES_DB: loantrack
+  POSTGRES_USER: loantrack_user
